@@ -14,7 +14,7 @@
 
 <p align="center">
   <!-- APK İndir butonu — Actions'dan son başarılı APK -->
-  <a href="../../releases/latest">
+  <a href="https://github.com/ThT0AltayHR/THT-Chat-Android/releases/latest/download/THT-Chat-plus-v3.0.apk">
     <img src="https://img.shields.io/badge/⬇️%20APK%20İndir-Android-green?style=for-the-badge&logo=android" alt="APK İndir"/>
   </a>
 </p>
@@ -104,7 +104,7 @@ MODIFY_AUDIO_SETTINGS — Hoparlör yönetimi
 > **Otomatik derleme** her `main` push'unda GitHub Actions ile çalışır.
 
 <p align="center">
-  <a href="../../releases/latest">
+  <a href="https://github.com/ThT0AltayHR/THT-Chat-Android/releases/latest/download/THT-Chat-plus-v3.0.apk">
     <img src="https://img.shields.io/badge/⬇️%20En%20Son%20APK'yı%20İndir-v3.0-brightgreen?style=for-the-badge&logo=android&logoColor=white" alt="APK İndir"/>
   </a>
 </p>
