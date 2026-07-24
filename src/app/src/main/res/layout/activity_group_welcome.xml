@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#07111F">
+
+    <!-- Header with group DP and name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/gradient_blue_black"
+        android:padding="24dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/group_dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gruba Hoş Geldiniz!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#B0BEC5"
+            android:textSize="14sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/group_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#B0BEC5"
+        android:textSize="14sp"
+        android:padding="16dp"/>
+
+    <!-- Rules section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📋 Grup Kuralları"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Scrollable rules -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/rules_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E0E0E0"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="24dp"/>
+    </ScrollView>
+
+    <!-- Accept button -->
+    <Button
+        android:id="@+id/accept_button"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:margin="16dp"
+        android:text="Aşağı kaydırarak kuralları okuyun"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rectangle_top_curved"
+        android:enabled="false"/>
+</LinearLayout>

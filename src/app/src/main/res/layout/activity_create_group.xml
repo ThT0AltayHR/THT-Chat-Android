@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07111F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grup Oluştur"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Group DP -->
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"/>
+
+            <ImageView
+                android:id="@+id/add_display_pic"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rectangle_top_curved"
+                android:padding="6dp"
+                android:src="@drawable/add_photo_icon"/>
+        </RelativeLayout>
+
+        <!-- Group Name -->
+        <EditText
+            android:id="@+id/group_name"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/rectangle_curved_screen5"
+            android:hint="Grup Adı *"
+            android:textColorHint="#757575"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Group Description -->
+        <EditText
+            android:id="@+id/group_description"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rectangle_curved_screen5"
+            android:hint="Grup Açıklaması"
+            android:textColorHint="#757575"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:gravity="top"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Group Rules (mandatory) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grup Kuralları *  (zorunlu)"
+            android:textColor="#E53935"
+            android:textSize="13sp"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/group_rules"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/rectangle_curved_screen5"
+            android:hint="Grup kurallarını buraya girin. Üyeler katılmadan önce bu kuralları okuyup kabul etmek zorundadır."
+            android:textColorHint="#757575"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:gravity="top"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Create Button -->
+        <Button
+            android:id="@+id/create"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Grubu Oluştur"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rectangle_top_curved"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>

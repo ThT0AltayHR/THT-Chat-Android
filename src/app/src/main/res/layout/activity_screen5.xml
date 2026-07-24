@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#07111F">
+
+    <!-- Chat header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/gradient_blue_black"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/back_arrow_icon"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/back_button"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/online_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#90CAF9"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/make_call"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/call_icon"
+            android:padding="4dp"/>
+    </RelativeLayout>
+
+    <!-- Messages RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"/>
+
+    <!-- Input area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0D1B2A"
+        android:padding="8dp">
+
+        <!-- Voice recording timer -->
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#EF5350"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/camera_image"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/add_photo_icon"
+                android:padding="4dp"/>
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_curved_screen5"
+                android:hint="Mesaj yaz..."
+                android:textColorHint="#757575"
+                android:textColor="#FFFFFF"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:imeOptions="actionSend"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Hold to record voice message -->
+            <ImageView
+                android:id="@+id/voice_msg_btn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:padding="4dp"
+                android:layout_marginEnd="4dp"/>
+
+            <ImageView
+                android:id="@+id/send_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/next_icon"
+                android:padding="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

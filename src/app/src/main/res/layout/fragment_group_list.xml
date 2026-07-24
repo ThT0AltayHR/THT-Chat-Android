@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07111F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient_blue_black"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_curved_screen5"
+            android:hint="Grup ara..."
+            android:textColorHint="#757575"
+            android:textColor="#FFFFFF"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+        <ImageView
+            android:id="@+id/new_group"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/plus_icon"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Henüz hiçbir gruba katılmadınız.\nYeni grup oluşturmak için + butonuna basın."
+        android:textColor="#757575"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_groups"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_hack"
+        android:layout_marginTop="60dp"/>
+</RelativeLayout>

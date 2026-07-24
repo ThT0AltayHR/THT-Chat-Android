@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07111F">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav"/>
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#07111F"
+        android:elevation="8dp">
+
+        <!-- Messages tab -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/messages_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/message_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mesajlar"
+                android:textColor="#9E9E9E"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!-- Contacts tab -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/contacts_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kişiler"
+                android:textColor="#9E9E9E"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!-- Calls tab -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/calls_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/call_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aramalar"
+                android:textColor="#9E9E9E"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!-- Groups tab -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/groups_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gruplar"
+                android:textColor="#9E9E9E"
+                android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

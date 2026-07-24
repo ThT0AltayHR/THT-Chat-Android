@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_blue_black">
+
+    <!-- Caller info -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/caller_dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/call_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#B0BEC5"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4CAF50"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Controls at bottom -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp">
+
+        <!-- Mute -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="40dp">
+            <ImageView
+                android:id="@+id/mute_btn"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/rectangle_top_curved"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:padding="12dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mikrofon"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+
+        <!-- End call -->
+        <RelativeLayout
+            android:id="@+id/rl_end_call"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/rectangle_top_curved"
+            android:layout_marginEnd="40dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+        </RelativeLayout>
+
+        <!-- Speaker -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/speaker_btn"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/rectangle_top_curved"
+                android:src="@android:drawable/ic_lock_silent_mode_off"
+                android:padding="12dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoparlör"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#07111F">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gradient_blue_black"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/back_arrow_icon"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Grup Ayarları"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Section: Kısıtlamalar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KULLANICI KISITLAMALARI"
+                android:textColor="#607D8B"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:letterSpacing="0.1"/>
+
+            <!-- Links blocked -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/receive_message_bg"
+                android:layout_marginBottom="8dp"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="🔗 Link Paylaşımını Engelle"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+                <Switch
+                    android:id="@+id/links_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Videos blocked -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/receive_message_bg"
+                android:layout_marginBottom="8dp"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="🎥 Video Paylaşımını Engelle"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+                <Switch
+                    android:id="@+id/videos_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Files blocked -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/receive_message_bg"
+                android:layout_marginBottom="8dp"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="📁 Dosya Paylaşımını Engelle"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+                <Switch
+                    android:id="@+id/files_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Messaging blocked -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/receive_message_bg"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="💬 Mesaj Göndermeyi Kapat"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+                <Switch
+                    android:id="@+id/messaging_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Section: Kanallar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KANAL YÖNETİMİ"
+                android:textColor="#607D8B"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:letterSpacing="0.1"/>
+
+            <Button
+                android:id="@+id/add_channel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="+ Metin Kanalı Ekle"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rectangle_top_curved"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/add_voice_channel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="+ Sesli Kanal Ekle"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rectangle_top_curved"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Section: Üyeler -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ÜYE YÖNETİMİ"
+                android:textColor="#607D8B"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:letterSpacing="0.1"/>
+
+            <Button
+                android:id="@+id/manage_members_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Üyeleri Yönet"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rectangle_top_curved"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

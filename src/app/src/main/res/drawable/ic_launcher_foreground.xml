@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Anonymous / Hacker Mask — Guy Fawkes silhouette on dark bg -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Dark background -->
+    <path
+        android:fillColor="#07111F"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z"/>
+
+    <!-- Outer head oval - white -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,14
+            C38,14 26,28 26,46
+            C26,58 30,68 36,74
+            C38,76 38,80 36,84
+            C34,88 40,90 44,88
+            C47,90 50,92 54,92
+            C58,92 61,90 64,88
+            C68,90 74,88 72,84
+            C70,80 70,76 72,74
+            C78,68 82,58 82,46
+            C82,28 70,14 54,14Z"/>
+
+    <!-- Forehead dark shadow -->
+    <path
+        android:fillColor="#0A0A0A"
+        android:pathData="M54,17
+            C40,17 29,29 28,44
+            C32,38 40,34 54,34
+            C68,34 76,38 80,44
+            C79,29 68,17 54,17Z"/>
+
+    <!-- Left eye socket - dark oval -->
+    <ellipse
+        android:fillColor="#111111"
+        android:centerX="42"
+        android:centerY="48"
+        android:radiusX="9"
+        android:radiusY="7"/>
+
+    <!-- Right eye socket - dark oval -->
+    <ellipse
+        android:fillColor="#111111"
+        android:centerX="66"
+        android:centerY="48"
+        android:radiusX="9"
+        android:radiusY="7"/>
+
+    <!-- Left eyebrow arch - white -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33,40 Q42,34 51,40 L51,43 Q42,37 33,43Z"/>
+
+    <!-- Right eyebrow arch - white -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M57,40 Q66,34 75,40 L75,43 Q66,37 57,43Z"/>
+
+    <!-- Left eye glint (pupil area dark) -->
+    <ellipse
+        android:fillColor="#1A1A1A"
+        android:centerX="42"
+        android:centerY="48"
+        android:radiusX="6"
+        android:radiusY="4.5"/>
+
+    <!-- Right eye glint -->
+    <ellipse
+        android:fillColor="#1A1A1A"
+        android:centerX="66"
+        android:centerY="48"
+        android:radiusX="6"
+        android:radiusY="4.5"/>
+
+    <!-- Nose bridge lines -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M51,42 L50,56 Q54,58 58,56 L57,42Z"/>
+
+    <!-- Cheekbones highlight -->
+    <path
+        android:fillColor="#E8E8E8"
+        android:pathData="M32,56 Q36,62 40,64 Q42,60 38,58Z"/>
+    <path
+        android:fillColor="#E8E8E8"
+        android:pathData="M76,56 Q72,62 68,64 Q66,60 70,58Z"/>
+
+    <!-- Moustache - classic curled Guy Fawkes -->
+    <!-- Left moustache half -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M35,67
+            Q38,63 43,64
+            Q47,65 50,68
+            Q47,66 43,67
+            Q39,68 36,71Z"/>
+
+    <!-- Right moustache half -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M73,67
+            Q70,63 65,64
+            Q61,65 58,68
+            Q61,66 65,67
+            Q69,68 72,71Z"/>
+
+    <!-- Center moustache join -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M50,68 Q54,72 58,68 Q56,70 54,70 Q52,70 50,68Z"/>
+
+    <!-- Chin beard / goatee -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M46,75
+            Q50,72 54,72 Q58,72 62,75
+            Q60,82 54,85 Q48,82 46,75Z"/>
+
+    <!-- Thin smile line -->
+    <path
+        android:fillColor="#333333"
+        android:strokeColor="#333333"
+        android:strokeWidth="1"
+        android:pathData="M44,68 Q54,74 64,68"/>
+
+</vector>
