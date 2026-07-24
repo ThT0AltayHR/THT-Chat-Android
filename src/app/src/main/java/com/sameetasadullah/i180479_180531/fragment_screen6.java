@@ -36,6 +36,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -71,12 +72,17 @@ public class fragment_screen6 extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Account firebaseAccount = snapshot.getValue(Account.class);
+                if (firebaseAccount == null) {
+                    return;
+                }
                 accounts.add(firebaseAccount);
                 contactList.clear();
                 addPhoneContactsToList();
-                adaptor.notifyDataSetChanged();
+                if (adaptor != null) {
+                    adaptor.notifyDataSetChanged();
+                }
 
-                if (firebaseAccount.getID().equals(mAuth.getUid())) {
+                if (Objects.equals(firebaseAccount.getID(), mAuth.getUid())) {
                     name.setText(firebaseAccount.getFirstName() + " " + firebaseAccount.getLastName());
                     Picasso.get().load(firebaseAccount.getDp()).into(dp);
                 }
@@ -108,6 +114,9 @@ public class fragment_screen6 extends Fragment {
         adaptor = new screen6RVAdaptor(getActivity(), contactList, fragment_screen6.this);
         recyclerView.setAdapter(adaptor);
         recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(50));
+        contactList.clear();
+        addPhoneContactsToList();
+        adaptor.notifyDataSetChanged();
 
         newContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,23 +135,45 @@ public class fragment_screen6 extends Fragment {
     }
 
     private void addPhoneContactsToList() {
-        ContentResolver contentResolver = getActivity().getContentResolver();
+        if (getActivity() == null || adaptor == null
+                || ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        ContentResolver contentResolver = requireActivity().getContentResolver();
         Cursor phones=contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null);
+        if (phones == null) {
+            return;
+        }
+
         String phoneNo;
         while (phones.moveToNext()) {
             int index = phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-            phoneNo = phones.getString(index).replace("+92","0");
+            if (index < 0) {
+                continue;
+            }
+            String rawPhoneNo = phones.getString(index);
+            if (rawPhoneNo == null || rawPhoneNo.trim().isEmpty()) {
+                continue;
+            }
+            phoneNo = rawPhoneNo.replace("+92","0").trim();
 
-            if (phoneNo.charAt(4) == ' ') {
+            if (phoneNo.length() > 4 && phoneNo.charAt(4) == ' ') {
                 StringBuilder stringBuilder = new StringBuilder(phoneNo);
                 stringBuilder.deleteCharAt(4);
                 phoneNo = stringBuilder.toString();
             }
 
             for (int i = 0; i < accounts.size(); ++i) {
-                if (accounts.get(i).getPhoneNumber().equals(phoneNo) && !accounts.get(i).getID().equals(mAuth.getUid())) {
-                    contactList.add(new contact(accounts.get(i).getFirstName() + " " +
-                            accounts.get(i).getLastName(), phoneNo, accounts.get(i).getDp()));
+                Account account = accounts.get(i);
+                if (account != null
+                        && account.getPhoneNumber() != null
+                        && account.getID() != null
+                        && account.getPhoneNumber().equals(phoneNo)
+                        && !account.getID().equals(mAuth.getUid())) {
+                    contactList.add(new contact(account.getFirstName() + " " +
+                            account.getLastName(), phoneNo, account.getDp()));
                     break;
                 }
             }

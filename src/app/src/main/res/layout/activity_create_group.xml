@@ -31,7 +31,7 @@
                 android:id="@+id/dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/chat_bubbles"/>
 
             <ImageView
                 android:id="@+id/add_display_pic"

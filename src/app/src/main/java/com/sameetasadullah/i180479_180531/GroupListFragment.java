@@ -154,7 +154,7 @@ public class GroupListFragment extends Fragment {
             holder.name.setText(group.getName());
             holder.memberCount.setText(group.getMemberCount() + " üye");
             if (group.getDp() != null && !group.getDp().isEmpty()) {
-                Picasso.get().load(group.getDp()).placeholder(R.drawable.logo).into(holder.dp);
+                Picasso.get().load(group.getDp()).placeholder(R.drawable.chat_bubbles).into(holder.dp);
             }
             holder.itemView.setOnClickListener(v -> {
                 if (mAuth.getCurrentUser() == null) return;

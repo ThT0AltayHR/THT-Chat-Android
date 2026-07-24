@@ -122,7 +122,7 @@ public class screen5RVAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHold
             h.message.setText(msg.getMessage());
             h.time.setText(msg.getTime());
             if (receiverDP != null && !receiverDP.isEmpty() && h.dp != null) {
-                Picasso.get().load(receiverDP).placeholder(R.drawable.logo).into(h.dp);
+                Picasso.get().load(receiverDP).placeholder(R.drawable.chat_bubbles).into(h.dp);
             }
             // Link preview
             if ("link".equals(msg.getType()) && msg.getLinkUrl() != null) {

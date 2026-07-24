@@ -18,7 +18,7 @@
             android:id="@+id/group_dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/chat_bubbles"
             android:layout_marginBottom="12dp"/>
 
         <TextView

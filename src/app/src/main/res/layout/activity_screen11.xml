@@ -17,7 +17,7 @@
             android:id="@+id/caller_dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/chat_bubbles"
             android:layout_marginBottom="16dp"/>
 
         <TextView

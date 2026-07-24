@@ -50,7 +50,10 @@ public class screen6RVAdaptor extends RecyclerView.Adapter<screen6RVAdaptor.scre
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                accounts.add(snapshot.getValue(Account.class));
+                Account account = snapshot.getValue(Account.class);
+                if (account != null) {
+                    accounts.add(account);
+                }
             }
 
             @Override
@@ -92,10 +95,13 @@ public class screen6RVAdaptor extends RecyclerView.Adapter<screen6RVAdaptor.scre
             @Override
             public void onClick(View view) {
                 for (int i = 0; i < accounts.size(); ++i) {
-                    if (accounts.get(i).getPhoneNumber().equals(contactList.get(holder.getAdapterPosition()).getNumber())) {
+                    Account account = accounts.get(i);
+                    if (account != null
+                            && account.getPhoneNumber() != null
+                            && account.getPhoneNumber().equals(contactList.get(holder.getAdapterPosition()).getNumber())) {
                         Intent intent = new Intent(context, screen5.class);
-                        intent.putExtra("name", accounts.get(i).getFirstName() + " " + accounts.get(i).getLastName());
-                        intent.putExtra("receiverID", accounts.get(i).getID());
+                        intent.putExtra("name", account.getFirstName() + " " + account.getLastName());
+                        intent.putExtra("receiverID", account.getID());
                         fragment.applicationNotMinimized();
                         context.startActivity(intent);
                     }

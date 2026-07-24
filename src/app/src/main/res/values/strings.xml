@@ -3,4 +3,5 @@
     <string name="app_name">THT-Chat+</string>
     <string name="app_tagline">Güvenli iletişim, özgür sohbet</string>
     <string name="developer_name">AltayHR Developer</string>
+    <string name="chat_bubbles_description">Mesajlaşma simgesi</string>
 </resources>

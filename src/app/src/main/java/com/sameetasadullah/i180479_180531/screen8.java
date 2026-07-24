@@ -34,6 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 public class screen8 extends AppCompatActivity {
 
@@ -72,10 +73,15 @@ public class screen8 extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Account firebaseAccount = snapshot.getValue(Account.class);
+                if (firebaseAccount == null) {
+                    return;
+                }
                 accounts.add(firebaseAccount);
                 ls.clear();
                 addPhoneContactsToList();
-                adapter.notifyDataSetChanged();
+                if (adapter != null) {
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -105,6 +111,9 @@ public class screen8 extends AppCompatActivity {
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
         rv.addItemDecoration(new VerticalSpaceItemDecoration(50));
+        ls.clear();
+        addPhoneContactsToList();
+        adapter.notifyDataSetChanged();
 
         updateUserStatus("online");
     }
@@ -131,23 +140,44 @@ public class screen8 extends AppCompatActivity {
     }
 
     private void addPhoneContactsToList() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
         ContentResolver contentResolver = getContentResolver();
         Cursor phones=contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null);
+        if (phones == null) {
+            return;
+        }
+
         String phoneNo;
         while (phones.moveToNext()) {
             int index = phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-            phoneNo = phones.getString(index).replace("+92","0");
+            if (index < 0) {
+                continue;
+            }
+            String rawPhoneNo = phones.getString(index);
+            if (rawPhoneNo == null || rawPhoneNo.trim().isEmpty()) {
+                continue;
+            }
+            phoneNo = rawPhoneNo.replace("+92","0").trim();
 
-            if (phoneNo.charAt(4) == ' ') {
+            if (phoneNo.length() > 4 && phoneNo.charAt(4) == ' ') {
                 StringBuilder stringBuilder = new StringBuilder(phoneNo);
                 stringBuilder.deleteCharAt(4);
                 phoneNo = stringBuilder.toString();
             }
 
             for (int i = 0; i < accounts.size(); ++i) {
-                if (accounts.get(i).getPhoneNumber().equals(phoneNo) && !accounts.get(i).getID().equals(mAuth.getUid())) {
-                    ls.add(new Recent_Contact(accounts.get(i).getFirstName() + " " +
-                            accounts.get(i).getLastName(), accounts.get(i).getDp(), accounts.get(i).getID()));
+                Account account = accounts.get(i);
+                if (account != null
+                        && account.getPhoneNumber() != null
+                        && account.getID() != null
+                        && account.getPhoneNumber().equals(phoneNo)
+                        && !account.getID().equals(mAuth.getUid())) {
+                    ls.add(new Recent_Contact(account.getFirstName() + " " +
+                            account.getLastName(), account.getDp(), account.getID()));
                     break;
                 }
             }
