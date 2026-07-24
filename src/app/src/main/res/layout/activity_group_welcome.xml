@@ -85,7 +85,7 @@
         android:id="@+id/accept_button"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:margin="16dp"
+        android:layout_margin="16dp"
         android:text="Aşağı kaydırarak kuralları okuyun"
         android:textColor="#FFFFFF"
         android:background="@drawable/rectangle_top_curved"
