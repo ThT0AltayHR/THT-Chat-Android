@@ -323,7 +323,7 @@ public class WebRTCManager {
     }
 
     // Simplified SdpObserver base
-    private static abstract class SimpleSdpObserver implements SdpObserver {
+    private static class SimpleSdpObserver implements SdpObserver {
         @Override public void onCreateSuccess(SessionDescription sdp) {}
         @Override public void onSetSuccess() {}
         @Override public void onCreateFailure(String s) { Log.e(TAG, "SDP create failure: " + s); }

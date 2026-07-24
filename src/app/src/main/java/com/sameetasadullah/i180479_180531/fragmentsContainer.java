@@ -59,6 +59,21 @@ public class fragmentsContainer extends AppCompatActivity {
         }
     }
 
+    public void changeViewPager(int position) {
+        if (viewPager == null || fragmentAdapter == null
+                || position < 0 || position >= fragmentAdapter.getItemCount()) {
+            return;
+        }
+        viewPager.setCurrentItem(position, false);
+    }
+
+    public void changeImageColorToBlue(int position) {
+        ImageView[] tabs = {messagesImage, contactsImage, callsImage, groupsImage};
+        if (position >= 0 && position < tabs.length) {
+            setActiveTab(tabs[position]);
+        }
+    }
+
     private void updateUserStatus(String state) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Accounts");
         reference.keepSynced(true);

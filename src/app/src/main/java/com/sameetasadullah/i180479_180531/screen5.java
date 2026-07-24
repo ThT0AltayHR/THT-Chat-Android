@@ -339,7 +339,7 @@ public class screen5 extends ScreenshotDetectionActivity {
     }
 
     @Override
-    public void onScreenshotTaken() {
+    public void onScreenCaptured(String path) {
         if (mAuth.getCurrentUser() == null) return;
         String myUID = mAuth.getCurrentUser().getUid();
         String timestamp = new SimpleDateFormat("hh:mm a").format(Calendar.getInstance().getTime());
